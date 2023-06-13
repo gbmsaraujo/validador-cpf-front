@@ -7,12 +7,13 @@ export default function Gerar() {
   const [cpfGenerated, setCpfGenerated] = useState<string>("")
 
   const handleGenerateCpf = async ()=> {
-    const {data} = await axios.get("http://127.0.0.1:8000/gerar-cpf")
+    const {data} = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/gerar-cpf`)
     setCpfGenerated(data)
   }
   return (
     <>
       <Navbar />
+
 
       <section className={styles.gerar}>
         <h2>Gerador de CPFs</h2>

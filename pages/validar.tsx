@@ -9,7 +9,7 @@ export default function Validar() {
 	const [classValid, setClassValid] = useState<boolean>(false);
 
 	const handleValidation = async () => {
-		const { data } = await axios.post('http://127.0.0.1:8000/validar-cpf', {
+		const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/validar-cpf`, {
 			cpf: cpf,
 		});
 
